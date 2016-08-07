@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script>
+    var Person = (function () {
+      var members = [];  // class var
+      Person.callMembers = function() {  // class function
+        members.forEach(function(member) {
+          console.log("hi, " + member.name);
+        });
+      }
+
+      function Person(name) {
+        this.name = name;  // instance var
+        members.push(this);
+      }
+
+      Person.prototype = {
+        constructor: Person,
+        sayHello: function() {  // instance function
+          console.log("hello, " + this.name);
+        },
+        sayGoodBye: function() {
+          console.log("good bye");
+        }
+      }
+
+      return Person;
+    })();
+
+    var suzuki = new Person("suzuki");
+    var sato = new Person("sato");
+    sato.sayHello();
+    suzuki.sayGoodBye();
+    Person.callMembers();
+  </script>
+</head>
+<body></body>
+</html>
