@@ -1,0 +1,14 @@
+{
+  "name": "npm-simple-git",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "simple-git": "^1.45.0"
+  }
+}
