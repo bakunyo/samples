@@ -1,0 +1,55 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React Tutorial</title>
+    <script src="https://npmcdn.com/react@15.3.0/dist/react.js"></script>
+    <script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <script src="https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"></script>
+    <script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
+
+  </head>
+  <body>
+    <div id="content"></div>
+    <script type="text/babel">
+        var CommentBox = React.createClass({
+        render: function() {
+            return (
+            <div className="commentBox">
+                <h1>Comments</h1>
+                <CommentList />
+                <CommentForm />
+            </div>
+            );
+        }
+        });
+
+        var CommentList = React.createClass({
+        render: function() {
+            return (
+            <div className="commentList">
+                Hello, world. I'm a CommentList.
+            </div>
+            )
+        }
+        });
+
+        var CommentForm = React.createClass({
+        render: function() {
+            return (
+            <div className="commentForm">
+                Hello, world. I'm a CommentForm.
+            </div>
+            )
+        }
+        });
+
+        ReactDOM.render(
+            <CommentBox />,
+            document.getElementById('content')
+        );
+    </script>
+  </body>
+</html>
