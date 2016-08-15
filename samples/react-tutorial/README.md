@@ -18,6 +18,5 @@ https://facebook.github.io/react/docs/tutorial-ja-JP.html
 - componentDidMount -> コンポーネントがレンダリングされた際、Reactが自動的に呼び出す
 - setState -> 状態(state)を更新するためのメソッド。
 
-### つづき
-新しいコメントの追加 から
-https://facebook.github.io/react/docs/tutorial-ja-JP.html#
+### callbacks
+- createClassの中に関数を用意して、onChange, onSubmit等に仕込めばOK
