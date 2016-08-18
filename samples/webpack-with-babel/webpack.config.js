@@ -1,3 +1,5 @@
+var ManifestPlugin = require('webpack-manifest-plugin');
+
 module.exports = {
   context: __dirname + '/source',
   entry: {
@@ -5,7 +7,7 @@ module.exports = {
   },
   output: {
     path: __dirname + '/distribution/javascript',
-    filename: '[name].js'
+    filename: '[name]-[hash].js'
   },
   module: {
     loaders: [
@@ -18,5 +20,8 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new ManifestPlugin()
+  ]
 };
