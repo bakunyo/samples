@@ -1,4 +1,4 @@
-var assert = require('assert');
+var assert = require('power-assert');
 
 describe('Array', function() {
   describe('#indexOf()', function() {
