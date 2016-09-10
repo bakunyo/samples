@@ -10,6 +10,6 @@ class Friend extends Person {
 }
 
 var friend = new Friend('You');
-console.log("test");
+console.log("test2");
 
 friend.callName();

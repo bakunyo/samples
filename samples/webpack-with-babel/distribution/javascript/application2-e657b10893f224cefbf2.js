@@ -80,6 +80,7 @@
 	}(_person2.default);
 
 	var friend = new Friend('You');
+	console.log("test2");
 
 	friend.callName();
 
