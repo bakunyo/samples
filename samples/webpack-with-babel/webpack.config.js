@@ -26,7 +26,7 @@ webpack_configs = Object.keys(entries).map(function(key) {
         }
       ]
     },
-    plugins: [ new AssetsPlugin() ]
+    plugins: [ assetsPlugin ]
   }
 }, entries);
 
