@@ -1,6 +1,5 @@
 class MyWebpackPlugin {
   apply(compiler) {
-    debugger;
     compiler.plugin('compile', (params) => {
       console.log('compile開始時の処理')
     })
@@ -19,7 +18,6 @@ class MyWebpackPlugin {
     })
   }
 }
-
 
 module.exports = {
   entry: "./entry.js",
