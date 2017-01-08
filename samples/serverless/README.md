@@ -1,4 +1,5 @@
 # Serverless Framework
+Try Serverless with aws-nodejs
 
 ## Set up
 [Installation](https://serverless.com/framework/docs/providers/aws/guide/installation/)
@@ -13,3 +14,7 @@ $ npm install -g serverless
 $ serverless config credentials --provider aws --key xxxxx --secret xxxxx
 ```
 
+## Initialize
+```
+sls create -t aws-nodejs
+```
