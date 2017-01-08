@@ -18,3 +18,28 @@ $ serverless config credentials --provider aws --key xxxxx --secret xxxxx
 ```
 sls create -t aws-nodejs
 ```
+
+## Develop
+Edit `handler.js` and `serverless.yml`
+
+## Deploy
+```
+sls deploy
+```
+
+## Invoke
+```
+sls invoke -f hello
+```
+
+### As API
+```
+# in serverless.yml
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+        path: hello
+        method: get
+```
