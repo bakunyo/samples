@@ -1,0 +1,16 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{63EFC189-D655-4DDC-A5E7-EFDDB02C4520}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet_core", "src\dotnet_core\dotnet_core.csproj", "{55DDE8A3-9A0C-41A1-9C80-83E739323F12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{55DDE8A3-9A0C-41A1-9C80-83E739323F12} = {63EFC189-D655-4DDC-A5E7-EFDDB02C4520}
+	EndGlobalSection
+EndGlobal
