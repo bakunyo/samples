@@ -22,6 +22,7 @@ init = tf.global_variables_initializer()
 
 sess = tf.Session()
 sess.run(init)
+tf.summary.FileWriter('./', sess.graph)
 
 x_ary = np.empty(201)
 w_ary = np.empty(201)
