@@ -36,6 +36,8 @@ def _train(total_loss, global_step):
   opt = tf.train.GradientDescentOptimizer(learning_rate=0.001)
   grads = opt.compute_gradients(total_loss)
   train_op = opt.apply_gradients(grads, global_step=global_step)
+  tf.summary.scalar("loss", total_loss)
+
   return train_op
 
 filenames = [
@@ -60,12 +62,15 @@ def main(argv=None):
 
   train_op = _train(total_loss, global_step)
 
+  summary = tf.summary.merge_all()
+
   with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
 
     total_duration = 0
 
-    tf.summary.FileWriter('./tensorflow_log', sess.graph_def)
+    writer = tf.summary.FileWriter('./tensorflow_log', sess.graph)
+    summary_i = 0
     
     for epoch in range(1, FLAGS.epoch + 1):
       start_time = time.time()
@@ -102,6 +107,15 @@ def main(argv=None):
             print('Inference: %r' % result)
             accurancy = accurate_count / accurate_tried_count
             print('Accurancy: %f' % accurancy)
+            summary_i += 1
+            summary_str = sess.run(summary,
+                feed_dict={
+                train_placeholder: image.byte_array,
+                label_placeholder: image.label
+              })
+
+            writer.add_summary(summary_str, summary_i)
+            writer.flush()
 
         reader.close()
 
