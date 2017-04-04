@@ -14,5 +14,13 @@ python3 manage.py runserver
 # LAN内からのアクセスにはALLOWS_HOSTで許可が必要
 ```
 
-ここから
-https://docs.djangoproject.com/ja/1.9/intro/tutorial01/#creating-the-polls-app
+#### プロジェクトとアプリケーション
+とあるWEBサイト: プロジェクト
+その中に含まれる機能(ブログ、DB、投票など): アプリケーション
+
+プロジェクトの中に複数のアプリケーションをつくっていくイメージ
+
+```
+# アプリケーションの作成
+python3 manage.py startapp polls
+```
