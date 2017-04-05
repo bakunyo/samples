@@ -208,5 +208,22 @@ url ヘルパー
 python3 manage.py test [{app}]
 ```
 
+#### Viewのテスト
+```
+>>> from django.test.utils import setup_test_environment
+>>> setup_test_environment()
+>>> from django.test import Client
+>>> client = Client()
+>>> response = client.get('/')
+>>> response.status_code
+404
+>>> response = client.get('/polls/')
+>>> response.status_code
+200
+>>> response.content
+b'\n  <ul>\n  \n      <li><a href="/polls/1/">What&#39;s new?</a></li>\n  \n      <li><a href="/polls/2/">Next question</a></li>\n  \n  </ul>\n\n'
+>>> response.context['latest_questions']
+[<Question: What's new?>, <Question: Next question>]
+```
 
 
