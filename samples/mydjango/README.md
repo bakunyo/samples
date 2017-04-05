@@ -173,4 +173,30 @@ url ヘルパー
 - csrf_token
 - forloop.counter
 
+### 汎用ビュー
+ステップ
+
+- URLConfを変換する
+- 古い不要なビューを削除する
+- 新しいビューにDjangoの汎用ビューを設定する
+
+汎用ビューの種類は以下の2種類。どちらもviews.genericを利用する
+
+- ListView
+- DetailView
+
+#### ListView
+- template_name でテンプレートを指定(デフォルトは `{app}/{model}_list.html`)
+- context_object_name で渡す変数名を指定(デフォルトは `{model}_list`)
+- get_queryset で渡すリストの中身を定義
+
+#### DetailView
+- template_name でテンプレートを指定(デフォルトは `{app}/{model}_detail.html`)
+- model を使ってどのモデルに関するViewなのかを指定
+- context_object_name で渡す変数名を指定(デフォルトは `{model}`)
+- urls.py では`<pk>`を使ってidを渡す
+
+
+
+
 
