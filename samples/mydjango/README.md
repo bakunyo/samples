@@ -159,7 +159,13 @@ url ヘルパー
 ```
   <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
 ```
-`urls.py` に `detail` が定義されていること
+`urls.py` に `detail` が定義されていること。
+名前空間の指定
+```
+  <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+```
+`mydjango/urls.py` で `namespace` により名前空間を指定する必要がある
+
 
 
 
