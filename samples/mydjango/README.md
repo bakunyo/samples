@@ -143,4 +143,8 @@ admin.site.register(Question)
 - Historyが自動的に記録される
 
 
+### URLConf
+- urls でリクエストURLとViewを結びつける
+- リクエストパラメータはurls.py に記述する
+
 
