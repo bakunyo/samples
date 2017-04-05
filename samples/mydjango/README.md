@@ -73,4 +73,52 @@ python3 manage.py sqlmigrate polls {migration no}
 - migrationを生成する `python3 manage.py makemigrations {app}
 - migrationを適用する `python3 manage.py migrate`
 
+### コンソール起動
+```
+$ python3 manage.py shell
+
+>>> from polls.models import Question, Choice
+>>> Question.objects.all()
+[]
+
+>>> from django.utils import timezone
+>>> q = Question(question_text="What's new?", pub_date=timezone.now())
+>>> q
+<Question: Question object>
+>>> q.save()
+
+>>> q.id
+1
+>>> q.question_text
+"What's new?"
+>>> q.pub_date
+datetime.datetime(2017, 4, 5, 2, 54, 30, 537805, tzinfo=<UTC>)
+
+# メソッド一覧
+>>> dir(q)
+```
+
+`def __str__` を定義することで、Console上の表現を指定できる
+
+### Modelが使えるメソッド
+```
+>>> Question() # インスタンス化
+>>> q.save() # DBに保存
+
+>>> Question.objects.all() # 全インスタンス
+>>> Question.objects.filter(id=1) # 検索
+>>> Question.objects.filter(question_text__startwith='What') # 前方一致
+
+>>> from django.utils import timezone
+>>> current_year = timezone.now().year
+>>> Question.objects.get(pub_date__year=current_year)
+
+>>> Question.objects.get(id=2) # raise error
+
+>>> q.choice_set.all() # 関連するChoice全て
+>>> c = q.choice_set.create(choice_text="Not much", votes=0) # Choice作成
+>>> c.question
+>>> q.choice_set.count() # 件数
+>>> c.delete() # 削除
+```
 
