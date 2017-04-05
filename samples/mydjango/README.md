@@ -196,7 +196,17 @@ url ヘルパー
 - context_object_name で渡す変数名を指定(デフォルトは `{model}`)
 - urls.py では`<pk>`を使ってidを渡す
 
+### Test
+#### テストの準備
+- テストは `{app}/test*.py` に書く
+- TestCase のサブクラスが対象になる
+- testで始まるメソッドがテストとして実行される
+- assertEqual で検証される
 
+#### テストの実行
+```
+python3 manage.py test [{app}]
+```
 
 
 
