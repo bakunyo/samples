@@ -155,5 +155,11 @@ def index(request):
   return render(request, 'polls/index.html', context)
 ```
 
+url ヘルパー
+```
+  <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+```
+`urls.py` に `detail` が定義されていること
+
 
 
