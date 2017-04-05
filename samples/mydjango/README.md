@@ -122,3 +122,25 @@ datetime.datetime(2017, 4, 5, 2, 54, 30, 537805, tzinfo=<UTC>)
 >>> c.delete() # 削除
 ```
 
+### Admin
+#### superuserの作成
+```
+python3 manage.py createsuperuser
+```
+
+http://127.0.0.1:8000/admin/ でログインできるようになる
+
+#### adminにpollsを追加する
+`polls/admin.py` に以下を追加
+
+```
+from .models import Question
+
+admin.site.register(Question)
+```
+
+- 追加／編集／削除が可能
+- Historyが自動的に記録される
+
+
+
