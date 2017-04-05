@@ -147,4 +147,13 @@ admin.site.register(Question)
 - urls でリクエストURLとViewを結びつける
 - リクエストパラメータはurls.py に記述する
 
+templateを使ったrender(shortcut)
+```
+def index(request):
+  latest_questions = Question.objects.order_by('-pub_date')[:5]
+  context = { 'latest_questions': latest_questions }
+  return render(request, 'polls/index.html', context)
+```
+
+
 
